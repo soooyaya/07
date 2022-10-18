@@ -4,13 +4,23 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	int i=10;
-	printf("함수 호출전 i=%d\n", i);
-	inc(i);
-	printf("함수 호출후 i=%d\n", i);
+	
+	int i;
+	for(i=0;i<3;i++)
+	sub();
+	
 	return 0;
 }
-int inc(int counter){
-	counter++;
-	return counter;
+
+void sub(void){
+	int auto_count = 0; // 자동할당 
+	static int static_count=0; // 정적할당 
+	
+	//변수 1증가 
+	auto_count++;
+	static_count++;
+	
+	//변수 내용 확인 
+	printf("auto_count=%d\n", auto_count);
+	printf("static_count=%d\n", static_count);
 }
